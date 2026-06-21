@@ -1,20 +1,17 @@
-# Logistic Regression: Airline Customer Satisfaction Evaluation
+# Logistic Regression – Airline Customer Satisfaction Prediction
 
 ## Project Overview
-In this project, I analyzed a comprehensive airline passenger survey dataset (`Invistico_Airline.csv`) to predict customer satisfaction. Using Python and `scikit-learn`, I engineered features, built a binomial Logistic Regression classification model, and evaluated its performance. By interpreting the model's coefficients and odds ratios, I translated my statistical findings into actionable business strategies for improving customer retention.
+This project builds a **Logistic Regression** model to predict airline passenger satisfaction ("satisfied" vs "neutral or dissatisfied") using survey data from Invistico Airline. The analysis includes feature encoding, model training, evaluation with Confusion Matrix, Precision, Recall, and business recommendations.
+
+## Dataset
+- **File**: `Invistico_Airline.csv`
+- Key Variables: satisfaction (target), Age, Gender, Customer Type, Type of Travel, Class, Flight Distance, various service ratings (0-5), Delays, etc.
 
 ## Environment Setup
-To replicate my analysis, ensure you have Python installed, then install the required libraries:
-`pip install pandas numpy matplotlib seaborn scikit-learn`
 
-## Methodology
-1. **Data Preprocessing:** Handled missing values and mapped the target variable (`satisfaction`) to binary outcomes (1 = satisfied, 0 = dissatisfied).
-2. **Feature Engineering:** One-hot encoded all categorical predictors to prevent the dummy variable trap (`drop_first=True`).
-3. **Modeling:** Split the data into training and testing sets (70/30) and fit a Logistic Regression model using `max_iter=3000` to ensure convergence on the large dataset.
-4. **Evaluation:** Generated a Confusion Matrix and calculated Precision, Recall, and F1-Scores.
-5. **Interpretation:** Extracted coefficients and converted them to Odds Ratios to identify the highest-impact service areas.
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
 
-## Key Insights & Business Recommendations
-* **Model Performance:** My logistic regression model achieved robust Precision and Recall metrics (roughly 83-87%), successfully minimizing false positives and proving the model's reliability for business application.
-* **Key Drivers:** Based on the calculated odds ratios, **Seat Comfort**, **Inflight Entertainment**, and **Online Boarding** emerged as the strongest positive predictors of passenger satisfaction. Conversely, Arrival Delays and poor Wi-Fi service were the strongest negative drivers.
-* **Strategic Action:** I recommend prioritizing capital investments in cabin seating ergonomics and upgrading the digital inflight entertainment systems. Because these factors yield the highest probability increase in overall satisfaction, they provide the most efficient ROI for the airline's customer experience budget. Furthermore, streamlining the mobile app's online boarding process provides a high-leverage, low-cost path to boosting baseline satisfaction before a passenger even arrives at the airport.
+## ├── logistic_regression_analysis.ipynb
+├── README.md
+└── Invistico_Airline.csv
